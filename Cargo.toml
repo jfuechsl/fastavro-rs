@@ -1,0 +1,15 @@
+[package]
+name = "fastavro-rs"
+version = "0.1.0"
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+libavro-sys = { version = "0.1.0", git = "https://github.com/jfuechsl/libavro-sys.git" }
+c_str_macro = "1.0.3"
+thiserror = "1.0.26"
+anyhow = "1.0.42"
+
+[dev-dependencies]
+chrono = "0.4.19"
