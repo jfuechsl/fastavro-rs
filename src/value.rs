@@ -62,6 +62,20 @@ impl Value {
         }
     }
 
+    pub fn get_int(&self) -> Option<i32> {
+        unsafe {
+            let mut val: i32 = 0;
+            let rval = (*self.inner.iface).get_int.unwrap()(
+                self.inner.iface, self.inner.self_, &mut val
+            );
+            if rval != 0 {
+                None
+            } else {
+                Some(val)
+            }
+        }
+    }
+
     pub fn get_size(&self) -> Option<usize> {
         unsafe {
             let mut size: size_t = 0;
